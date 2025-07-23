@@ -1,0 +1,125 @@
+
+/* Base Setup */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #1f1f1f;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #444;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+nav h1 {
+  font-size: 1.8rem;
+  color: #00aaff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00aaff;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: #00aaff;
+  margin-bottom: 10px;
+}
+
+.section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  border-bottom: 2px solid #00aaff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: #00ccff;
+}
+
+.skills, .project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills li, .project-list li {
+  background-color: #1f1f1f;
+  margin: 10px 0;
+  padding: 15px;
+  border-left: 4px solid #00aaff;
+  box-shadow: 0 2px 5px rgba(0, 170, 255, 0.1);
+}
+
+a {
+  color: #00ccff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1f1f1f;
+  border-top: 2px solid #444;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .section {
+    padding: 30px 15px;
+  }
+}
