@@ -25,7 +25,7 @@
 </ul>
 </nav>
 
-<header class="hero reveal" id="about">
+<header class="hero" id="about">
 <img src="profile.jpg" class="profile-img">
 <h2>Electronics & Telecommunication Engineer</h2>
 <p>Embedded Systems | IoT | Communication Technologies</p>
@@ -40,29 +40,34 @@
 <section class="section reveal" id="skills">
 <h2>Technical Skills</h2>
 
-<div class="skill">
-<p>C++</p>
-<div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+<div class="card-container">
+
+<div class="glass-card">
+<h3>Programming</h3>
+<p>C++, Python, SQL</p>
 </div>
 
-<div class="skill">
-<p>Embedded Systems</p>
-<div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+<div class="glass-card">
+<h3>Embedded Systems</h3>
+<p>Arduino, ESP8266, ESP32, Sensor Integration</p>
 </div>
 
-<div class="skill">
-<p>MATLAB / Simulink</p>
-<div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+<div class="glass-card">
+<h3>Tools</h3>
+<p>MATLAB, Simulink, Packet Tracer, Visual Studio</p>
 </div>
 
-<div class="skill">
-<p>Communication Systems</p>
-<div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
+<div class="glass-card">
+<h3>Core Knowledge</h3>
+<p>Digital Electronics, Communication Systems, Signal Processing</p>
+</div>
+
 </div>
 </section>
 
 <section class="section reveal" id="projects">
 <h2>Projects</h2>
+
 <div class="card-container">
 
 <div class="glass-card">
@@ -90,14 +95,17 @@
 
 <section class="section reveal" id="internship">
 <h2>Internship</h2>
+
 <div class="glass-card">
 <h3>Rittal Industrial Internship</h3>
 <p>Worked on industrial automation systems and panel technologies. Exposure to system integration and industrial workflows.</p>
 </div>
+
 </section>
 
 <section class="section reveal" id="education">
 <h2>Education</h2>
+
 <div class="card-container">
 
 <div class="glass-card">
@@ -126,7 +134,7 @@
 
 particlesJS("particles-js", {
 particles: {
-number: { value: 70 },
+number: { value: 60 },
 size: { value: 3 },
 color: { value: "#00e0ff" },
 line_linked: { enable: true, color: "#00e0ff" },
@@ -147,19 +155,6 @@ el.classList.add("active");
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
-
-const skillBars = document.querySelectorAll(".skill-fill");
-
-function animateSkills() {
-skillBars.forEach(bar => {
-const rect = bar.getBoundingClientRect();
-if(rect.top < window.innerHeight - 50){
-bar.style.width = bar.getAttribute("data-width");
-}
-});
-}
-
-window.addEventListener("scroll", animateSkills);
 
 </script>
 
