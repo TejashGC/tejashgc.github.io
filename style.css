@@ -102,8 +102,18 @@ text-decoration:none;
 .section{
 max-width:1000px;
 margin:auto;
-padding:120px 20px;
-border-bottom:1px solid rgba(255,255,255,0.1);
+padding:140px 20px;
+position:relative;
+}
+
+.section::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:1px;
+background:linear-gradient(to right,transparent,#00e0ff,transparent);
 }
 
 .section h2{
@@ -127,7 +137,7 @@ transition:0.4s;
 }
 
 .glass-card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px);
 box-shadow:0 15px 30px rgba(0,224,255,0.3);
 }
 
@@ -152,8 +162,8 @@ transition:1.5s ease;
 
 .reveal{
 opacity:0;
-transform:translateY(60px);
-transition:1s;
+transform:translateY(80px);
+transition:1s ease;
 }
 
 .reveal.active{
@@ -163,12 +173,6 @@ transform:translateY(0);
 
 footer{
 text-align:center;
-padding:40px;
+padding:60px 20px;
 color:#aaa;
-}
-
-@media(max-width:768px){
-.nav-links{
-display:none;
-}
 }
