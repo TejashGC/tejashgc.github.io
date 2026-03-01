@@ -1,11 +1,22 @@
-body {
+* {
 margin: 0;
-font-family: 'Poppins', sans-serif;
-color: white;
-background: #0f0f0f;
-overflow-x: hidden;
+padding: 0;
+box-sizing: border-box;
 }
 
+body {
+font-family: 'Poppins', sans-serif;
+background: #0f0f0f;
+color: #ffffff;
+overflow-x: hidden;
+line-height: 1.6;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+/* Animated Background */
 .bg-animation {
 position: fixed;
 width: 100%;
@@ -22,32 +33,42 @@ z-index: -1;
 100% { background-position: 0% 50%; }
 }
 
+/* Navigation */
+header {
+padding: 20px 0;
+}
+
 nav {
 display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 20px 40px;
+flex-wrap: wrap;
 }
 
 nav h1 {
 color: #00bfff;
+font-weight: 700;
 }
 
 nav ul {
-display: flex;
-gap: 20px;
 list-style: none;
+display: flex;
+gap: 25px;
 }
 
 nav a {
-color: white;
 text-decoration: none;
+color: white;
+transition: 0.3s;
+font-weight: 500;
 }
 
 nav a:hover {
 color: #00bfff;
 }
 
+/* Hero Section */
 .hero {
 text-align: center;
 padding: 80px 20px;
@@ -59,13 +80,23 @@ height: 170px;
 border-radius: 50%;
 object-fit: cover;
 border: 4px solid #00bfff;
-box-shadow: 0 0 25px #00bfff;
+box-shadow: 0 0 30px rgba(0,191,255,0.7);
 margin-bottom: 20px;
 }
 
+.hero h2 {
+font-size: 28px;
+margin-bottom: 10px;
+}
+
+.hero p {
+color: #cccccc;
+margin-bottom: 20px;
+}
+
+/* Button */
 .btn {
 display: inline-block;
-margin-top: 20px;
 padding: 10px 25px;
 background: #00bfff;
 color: black;
@@ -80,19 +111,9 @@ background: #00ffff;
 transform: scale(1.05);
 }
 
-.social-links {
-margin-top: 20px;
-display: flex;
-justify-content: center;
-gap: 20px;
-}
-
-.social-links a {
-color: #00ccff;
-}
-
+/* Section */
 .section {
-max-width: 900px;
+max-width: 950px;
 margin: auto;
 padding: 60px 20px;
 }
@@ -101,26 +122,104 @@ padding: 60px 20px;
 border-bottom: 2px solid #00bfff;
 padding-bottom: 10px;
 margin-bottom: 30px;
+font-size: 22px;
 }
 
-.card-list li,
-.edu-card {
-background: rgba(255,255,255,0.05);
+/* Cards */
+.card-list {
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+.click-card {
+background: rgba(255,255,255,0.06);
 backdrop-filter: blur(10px);
-padding: 15px;
-margin: 15px 0;
+padding: 18px;
 border-left: 4px solid #00bfff;
+cursor: pointer;
+transition: 0.3s ease;
+border-radius: 6px;
+}
+
+.click-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 10px 25px rgba(0,191,255,0.35);
+}
+
+/* Hidden expandable content */
+.hidden-content {
+display: none;
+margin-top: 12px;
+color: #cccccc;
+font-size: 14px;
+}
+
+/* Education Card */
+.edu-card {
+background: rgba(255,255,255,0.06);
+backdrop-filter: blur(10px);
+padding: 18px;
+margin-bottom: 20px;
+border-left: 4px solid #00bfff;
+border-radius: 6px;
 transition: 0.3s;
 }
 
-.card-list li:hover,
 .edu-card:hover {
-transform: translateY(-6px);
-box-shadow: 0 10px 25px rgba(0,191,255,0.3);
+transform: translateY(-5px);
+box-shadow: 0 8px 20px rgba(0,191,255,0.3);
 }
 
+.edu-card h3 {
+margin-bottom: 5px;
+color: #00ccff;
+}
+
+.edu-card p {
+color: #cccccc;
+font-size: 14px;
+}
+
+/* Contact */
+#contact p {
+margin-bottom: 8px;
+color: #cccccc;
+}
+
+/* Footer */
 footer {
 text-align: center;
-padding: 30px;
-background: rgba(0,0,0,0.5);
+padding: 25px;
+background: rgba(0,0,0,0.6);
+color: #888;
+margin-top: 40px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+
+nav {
+flex-direction: column;
+align-items: flex-start;
+}
+
+nav ul {
+flex-direction: column;
+gap: 12px;
+margin-top: 10px;
+}
+
+.hero h2 {
+font-size: 22px;
+}
+
+.profile-img {
+width: 140px;
+height: 140px;
+}
+
+.section {
+padding: 40px 15px;
+}
 }
