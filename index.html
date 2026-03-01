@@ -7,23 +7,9 @@
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<script>
-function toggleContent(id) {
-const element = document.getElementById(id);
-if (element.style.display === "block") {
-element.style.display = "none";
-} else {
-element.style.display = "block";
-}
-}
-</script>
-
 </head>
 
 <body>
-
-<div class="bg-animation"></div>
 
 <header>
 <nav>
@@ -40,47 +26,41 @@ element.style.display = "block";
 <section class="hero">
 <img src="profile.jpg" alt="Tejash GC" class="profile-img">
 <h2>Electronics & Telecommunication Engineer</h2>
-<p>Embedded Systems | IoT | Communication Engineering</p>
-<a href="Tejash_Resume.pdf" target="_blank" class="btn">View Resume</a>
+<p>Embedded Systems | IoT | Communication Technologies</p>
+<a href="Tejash_Resume.pdf" target="_blank" class="btn">Download Resume</a>
 </section>
 </header>
 
 <section id="about" class="section">
 <h2>About Me</h2>
 <p>
-Engineering student with strong foundation in electronics, embedded systems,
-signal processing and communication technologies.
-Focused on practical system design and research-oriented implementation.
+Engineering student with strong fundamentals in electronics, programming and system-level design.
+Interested in embedded systems, communication engineering and real-world problem solving.
 </p>
 </section>
 
 <section id="skills" class="section">
 <h2>Technical Skills</h2>
+<div class="grid">
 
-<div class="card-list">
-
-<div class="click-card" onclick="toggleContent('skill1')">
-<strong>Programming & Tools</strong>
-<div id="skill1" class="hidden-content">
-<p>C++, Python (basic), SQL, MATLAB/Simulink, Arduino IDE, Packet Tracer</p>
-<p>Experience in implementing embedded applications and simulation models.</p>
-</div>
+<div class="card">
+<h3>Programming</h3>
+<p>C++, Python (basic), SQL</p>
 </div>
 
-<div class="click-card" onclick="toggleContent('skill2')">
-<strong>Core Knowledge</strong>
-<div id="skill2" class="hidden-content">
-<p>Digital Electronics, Analog Circuits, Communication Systems, OFDM, VLC</p>
-<p>Hands-on experience in modulation techniques and signal performance analysis.</p>
-</div>
+<div class="card">
+<h3>Embedded Systems</h3>
+<p>Arduino, ESP8266, ESP32, Sensor Interfacing</p>
 </div>
 
-<div class="click-card" onclick="toggleContent('skill3')">
-<strong>Embedded Systems & IoT</strong>
-<div id="skill3" class="hidden-content">
-<p>Arduino, ESP8266, ESP32 based system development.</p>
-<p>Sensor interfacing, GSM communication, real-time monitoring systems.</p>
+<div class="card">
+<h3>Core Knowledge</h3>
+<p>Digital Electronics, Analog Circuits, Communication Systems</p>
 </div>
+
+<div class="card">
+<h3>Tools</h3>
+<p>MATLAB/Simulink, Packet Tracer, Arduino IDE</p>
 </div>
 
 </div>
@@ -89,33 +69,38 @@ Focused on practical system design and research-oriented implementation.
 <section id="projects" class="section">
 <h2>Projects</h2>
 
-<div class="card-list">
-
-<div class="click-card" onclick="toggleContent('proj1')">
-<strong>Smart IoT Irrigation System</strong>
-<div id="proj1" class="hidden-content">
-<p>Developed automated irrigation system using soil moisture sensors, ESP module and GSM alerts.</p>
-<p>Improved water efficiency through real-time monitoring and control.</p>
-</div>
+<div class="project-card">
+<h3>Smart IoT-Based Precision Irrigation System</h3>
+<p>
+Automated irrigation system using soil moisture sensors and ESP module.
+Implemented GSM alerts and real-time monitoring to reduce water wastage.
+</p>
 </div>
 
-<div class="click-card" onclick="toggleContent('proj2')">
-<strong>LiFi Communication System</strong>
-<div id="proj2" class="hidden-content">
-<p>Designed optical wireless communication system using ADO-OFDM.</p>
-<p>Analyzed BER and signal performance under varying conditions.</p>
-</div>
-</div>
-
-<div class="click-card" onclick="toggleContent('proj3')">
-<strong>RF433MHz Communication System</strong>
-<div id="proj3" class="hidden-content">
-<p>Implemented multi-transmitter single-receiver architecture using HT12E/HT12D.</p>
-<p>Achieved reliable long-range digital communication.</p>
-</div>
+<div class="project-card">
+<h3>GPS-Based Speed Limitation System</h3>
+<p>
+Designed location-based vehicle speed control system using GPS modules.
+Improves road safety by enforcing zone-based speed restrictions.
+</p>
 </div>
 
+<div class="project-card">
+<h3>RF433MHz Communication System</h3>
+<p>
+Developed multi-transmitter and single-receiver wireless system using HT12E/HT12D.
+Achieved stable long-range digital communication.
+</p>
 </div>
+
+<div class="project-card">
+<h3>LiFi Communication System</h3>
+<p>
+Built optical wireless communication setup using ADO-OFDM.
+Analyzed performance metrics including signal distortion and transmission efficiency.
+</p>
+</div>
+
 </section>
 
 <section id="education" class="section">
@@ -129,7 +114,7 @@ Focused on practical system design and research-oriented implementation.
 </div>
 
 <div class="edu-card">
-<h3>Diploma in Electronics & Communication</h3>
+<h3>Diploma in Electronics & Communication Engineering</h3>
 <p>Siddaganga Polytechnic</p>
 <p>CGPA: 9.18 / 10</p>
 <p>Completed 2023</p>
