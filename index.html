@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<script src="https://unpkg.com/scrollreveal"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
 </head>
@@ -16,61 +15,52 @@
 
 <div id="particles-js"></div>
 
-<header>
+<header class="hero">
 <nav>
 <h1 class="logo">Tejash GC</h1>
-<button id="themeToggle">Toggle Theme</button>
+<button id="themeToggle">Theme</button>
 </nav>
 
-<section class="hero">
+<div class="hero-content">
 <img src="profile.jpg" class="profile-img">
-<h2>Electronics & Telecommunication Engineer</h2>
+<h2><span id="typing"></span></h2>
 <p>Embedded Systems | IoT | Communication Technologies</p>
 <a href="Tejash_Resume.pdf" target="_blank" class="btn">Download Resume</a>
-</section>
+</div>
 </header>
 
-<section class="section reveal">
-<h2>Technical Skills</h2>
+<section class="section">
+<h2>Projects</h2>
 
-<div class="skill">
-<p>C++</p>
-<div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+<div class="card-container">
+
+<div class="glass-card">
+<h3>ADO-OFDM System</h3>
+<p>Performance analysis using MATLAB/Simulink. Evaluated metrics and transmission trends.</p>
 </div>
 
-<div class="skill">
-<p>Embedded Systems</p>
-<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+<div class="glass-card">
+<h3>LiFi Communication</h3>
+<p>Designed optical wireless communication prototype and analyzed system behavior.</p>
 </div>
 
-<div class="skill">
-<p>MATLAB</p>
-<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+<div class="glass-card">
+<h3>RF433 MHz System</h3>
+<p>Multi-transmitter single-receiver architecture with reliable signal transmission.</p>
 </div>
 
-<div class="skill">
-<p>Communication Systems</p>
-<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+<div class="glass-card">
+<h3>IoT Asthma Monitoring</h3>
+<p>ESP32 based respiratory monitoring system with abnormal pattern detection.</p>
 </div>
 
+</div>
 </section>
 
-<section class="section reveal">
-<h2>Project Gallery</h2>
+<section class="section">
+<h2>Contact</h2>
 
-<div class="gallery">
-<img src="project1.jpg">
-<img src="project2.jpg">
-<img src="project3.jpg">
-<img src="project4.jpg">
-</div>
-
-</section>
-
-<section class="section reveal">
-<h2>Contact Me</h2>
-
-<form action="https://formsubmit.co/tejashtej07@gmail.com" method="POST">
+<form action="https://formsubmit.co/tejashtej07@gmail.com" method="POST" class="glass-card form-card">
 <input type="text" name="name" placeholder="Your Name" required>
 <input type="email" name="email" placeholder="Your Email" required>
 <textarea name="message" placeholder="Your Message" required></textarea>
@@ -84,105 +74,30 @@
 </footer>
 
 <script>
-ScrollReveal().reveal('.reveal', {
-distance: '60px',
-duration: 1200,
-origin: 'bottom',
-interval: 200
-});
-
 particlesJS("particles-js", {
 particles: {
-number: { value: 60 },
+number: { value: 70 },
 size: { value: 3 },
 color: { value: "#00e0ff" },
-line_linked: { enable: true, color: "#00e0ff" }
+line_linked: { enable: true, color: "#00e0ff" },
+move: { speed: 2 }
 }
 });
 
-const toggle = document.getElementById("themeToggle");
-toggle.onclick = function() {
+const text = "Electronics & Telecommunication Engineer";
+let i = 0;
+function typing() {
+if (i < text.length) {
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(typing, 60);
+}
+}
+typing();
+
+document.getElementById("themeToggle").onclick = function() {
 document.body.classList.toggle("light");
 };
-</script>
-
-</body>
-</html>
-<div class="project-card">
-<h3>IoT-Based Asthma Monitoring System</h3>
-<p>
-Collected and analyzed sensor data using ESP32.
-Monitored respiratory parameters and detected abnormal patterns.
-</p>
-</div>
-
-</section>
-
-<section id="internship" class="section reveal">
-<h2>Internship</h2>
-<div class="edu-card">
-<h3>Rittal Industrial Internship</h3>
-<p>
-Gained exposure to industrial automation systems and panel technologies.
-Worked on system integration and practical workflow understanding.
-</p>
-</div>
-</section>
-
-<section id="publications" class="section reveal">
-<h2>Publications</h2>
-<div class="project-card">
-<h3>
-Intelligent Dynamic Instruction Scheduling:
-An AI-Driven Approach for Next-Generation Processors
-</h3>
-<p>
-Co-author. Presented at ICTCS 2025 international conference.
-Accepted for publication in Springer conference proceedings.
-</p>
-</div>
-</section>
-
-<section id="education" class="section reveal">
-<h2>Education</h2>
-
-<div class="edu-card">
-<h3>B.E. Electronics & Telecommunication Engineering</h3>
-<p>Siddaganga Institute of Technology</p>
-<p>CGPA: 6.42 / 10</p>
-</div>
-
-<div class="edu-card">
-<h3>Diploma in Electronics & Communication Engineering</h3>
-<p>Siddaganga Polytechnic</p>
-<p>CGPA: 9.18 / 10</p>
-</div>
-
-<div class="edu-card">
-<h3>SSLC</h3>
-<p>Shubhodaya English School, Gubbi</p>
-</div>
-
-</section>
-
-<section id="contact" class="section reveal">
-<h2>Contact</h2>
-<p>Email: tejashtej07@gmail.com</p>
-<p>Phone: +91 9611370876</p>
-<p>LinkedIn: linkedin.com/in/tejash-gc-9a3b17254</p>
-</section>
-
-<footer>
-<p>© 2026 Tejash GC</p>
-</footer>
-
-<script>
-ScrollReveal().reveal('.reveal', {
-distance: '60px',
-duration: 1200,
-origin: 'bottom',
-interval: 200
-});
 </script>
 
 </body>
