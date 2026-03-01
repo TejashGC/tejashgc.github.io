@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
 </head>
+
 <body>
 
 <div id="particles-js"></div>
@@ -25,10 +25,11 @@
 </ul>
 </nav>
 
-<header class="hero" id="about">
+<header class="hero reveal" id="about">
 <img src="profile.jpg" class="profile-img">
 <h2>Electronics & Telecommunication Engineer</h2>
 <p>Embedded Systems | IoT | Communication Technologies</p>
+
 <div class="hero-links">
 <a href="Tejash_Resume.pdf" target="_blank" class="btn">Download Resume</a>
 <a href="https://www.linkedin.com/in/tejash-gc-9a3b17254" target="_blank" class="btn-outline">LinkedIn</a>
@@ -58,12 +59,10 @@
 <p>Communication Systems</p>
 <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
 </div>
-
 </section>
 
 <section class="section reveal" id="projects">
 <h2>Projects</h2>
-
 <div class="card-container">
 
 <div class="glass-card">
@@ -91,17 +90,14 @@
 
 <section class="section reveal" id="internship">
 <h2>Internship</h2>
-
 <div class="glass-card">
 <h3>Rittal Industrial Internship</h3>
 <p>Worked on industrial automation systems and panel technologies. Exposure to system integration and industrial workflows.</p>
 </div>
-
 </section>
 
 <section class="section reveal" id="education">
 <h2>Education</h2>
-
 <div class="card-container">
 
 <div class="glass-card">
@@ -130,7 +126,7 @@
 
 particlesJS("particles-js", {
 particles: {
-number: { value: 60 },
+number: { value: 70 },
 size: { value: 3 },
 color: { value: "#00e0ff" },
 line_linked: { enable: true, color: "#00e0ff" },
@@ -140,66 +136,31 @@ move: { speed: 2 }
 
 const reveals = document.querySelectorAll(".reveal");
 
-window.addEventListener("scroll", () => {
+function revealOnScroll() {
 reveals.forEach(el => {
-const top = el.getBoundingClientRect().top;
-if(top < window.innerHeight - 100){
+const rect = el.getBoundingClientRect();
+if(rect.top < window.innerHeight - 100){
 el.classList.add("active");
 }
 });
-});
+}
 
-const skillFills = document.querySelectorAll(".skill-fill");
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
 
-window.addEventListener("scroll", () => {
-skillFills.forEach(bar => {
-const top = bar.getBoundingClientRect().top;
-if(top < window.innerHeight - 50){
+const skillBars = document.querySelectorAll(".skill-fill");
+
+function animateSkills() {
+skillBars.forEach(bar => {
+const rect = bar.getBoundingClientRect();
+if(rect.top < window.innerHeight - 50){
 bar.style.width = bar.getAttribute("data-width");
 }
 });
-});
-
-</script>
-
-</body>
-</html><div class="card-container">
-<div class="glass-card">
-<h3>Intelligent Dynamic Instruction Scheduling</h3>
-<p>AI-driven approach for next-generation processors. Presented at ICTCS 2025. Accepted in Springer proceedings.</p>
-</div>
-</div>
-</section>
-
-<footer>
-<p>© 2026 Tejash GC</p>
-</footer>
-
-<script>
-particlesJS("particles-js", {
-particles: {
-number: { value: 70 },
-size: { value: 3 },
-color: { value: "#00e0ff" },
-line_linked: { enable: true, color: "#00e0ff" },
-move: { speed: 2 }
 }
-});
 
-const text = "Electronics & Telecommunication Engineer";
-let i = 0;
-function typing() {
-if (i < text.length) {
-document.getElementById("typing").innerHTML += text.charAt(i);
-i++;
-setTimeout(typing, 60);
-}
-}
-typing();
+window.addEventListener("scroll", animateSkills);
 
-document.getElementById("themeToggle").onclick = function() {
-document.body.classList.toggle("light");
-};
 </script>
 
 </body>
