@@ -8,6 +8,17 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
+<script>
+function toggleContent(id) {
+const element = document.getElementById(id);
+if (element.style.display === "block") {
+element.style.display = "none";
+} else {
+element.style.display = "block";
+}
+}
+</script>
+
 </head>
 
 <body>
@@ -28,47 +39,83 @@
 
 <section class="hero">
 <img src="profile.jpg" alt="Tejash GC" class="profile-img">
-<h2><span id="typing"></span></h2>
+<h2>Electronics & Telecommunication Engineer</h2>
 <p>Embedded Systems | IoT | Communication Engineering</p>
-
 <a href="Tejash_Resume.pdf" target="_blank" class="btn">View Resume</a>
-
-<div class="social-links">
-<a href="https://www.linkedin.com/in/tejash-gc-9a3b17254" target="_blank">LinkedIn</a>
-<a href="https://github.com/TejashGC" target="_blank">GitHub</a>
-<a href="https://www.codechef.com/users/sit1si23et421" target="_blank">CodeChef</a>
-</div>
 </section>
 </header>
 
 <section id="about" class="section">
 <h2>About Me</h2>
 <p>
-Electronics & Telecommunication Engineer passionate about embedded systems,
-real-time communication technologies and intelligent IoT systems.
-Focused on practical implementation and research-driven engineering.
+Engineering student with strong foundation in electronics, embedded systems,
+signal processing and communication technologies.
+Focused on practical system design and research-oriented implementation.
 </p>
 </section>
 
 <section id="skills" class="section">
 <h2>Technical Skills</h2>
-<ul class="card-list">
-<li>C++, Python, SQL</li>
-<li>Arduino, ESP8266, ESP32</li>
-<li>MATLAB, Embedded Systems</li>
-<li>OFDM, VLC, Signal Processing</li>
-<li>Networking Fundamentals</li>
-</ul>
+
+<div class="card-list">
+
+<div class="click-card" onclick="toggleContent('skill1')">
+<strong>Programming & Tools</strong>
+<div id="skill1" class="hidden-content">
+<p>C++, Python (basic), SQL, MATLAB/Simulink, Arduino IDE, Packet Tracer</p>
+<p>Experience in implementing embedded applications and simulation models.</p>
+</div>
+</div>
+
+<div class="click-card" onclick="toggleContent('skill2')">
+<strong>Core Knowledge</strong>
+<div id="skill2" class="hidden-content">
+<p>Digital Electronics, Analog Circuits, Communication Systems, OFDM, VLC</p>
+<p>Hands-on experience in modulation techniques and signal performance analysis.</p>
+</div>
+</div>
+
+<div class="click-card" onclick="toggleContent('skill3')">
+<strong>Embedded Systems & IoT</strong>
+<div id="skill3" class="hidden-content">
+<p>Arduino, ESP8266, ESP32 based system development.</p>
+<p>Sensor interfacing, GSM communication, real-time monitoring systems.</p>
+</div>
+</div>
+
+</div>
 </section>
 
 <section id="projects" class="section">
 <h2>Projects</h2>
-<ul class="card-list">
-<li>Smart IoT Irrigation System</li>
-<li>GPS Speed Limitation System</li>
-<li>RF433MHz Communication System</li>
-<li>LiFi Communication System</li>
-</ul>
+
+<div class="card-list">
+
+<div class="click-card" onclick="toggleContent('proj1')">
+<strong>Smart IoT Irrigation System</strong>
+<div id="proj1" class="hidden-content">
+<p>Developed automated irrigation system using soil moisture sensors, ESP module and GSM alerts.</p>
+<p>Improved water efficiency through real-time monitoring and control.</p>
+</div>
+</div>
+
+<div class="click-card" onclick="toggleContent('proj2')">
+<strong>LiFi Communication System</strong>
+<div id="proj2" class="hidden-content">
+<p>Designed optical wireless communication system using ADO-OFDM.</p>
+<p>Analyzed BER and signal performance under varying conditions.</p>
+</div>
+</div>
+
+<div class="click-card" onclick="toggleContent('proj3')">
+<strong>RF433MHz Communication System</strong>
+<div id="proj3" class="hidden-content">
+<p>Implemented multi-transmitter single-receiver architecture using HT12E/HT12D.</p>
+<p>Achieved reliable long-range digital communication.</p>
+</div>
+</div>
+
+</div>
 </section>
 
 <section id="education" class="section">
@@ -89,9 +136,9 @@ Focused on practical implementation and research-driven engineering.
 </div>
 
 <div class="edu-card">
-<h3>School Education</h3>
-<p>Completed SSLC & PUC (Science Stream)</p>
-<p>English Medium</p>
+<h3>SSLC</h3>
+<p>Shubhodaya English School, Gubbi</p>
+<p>Completed 2020</p>
 </div>
 
 </section>
@@ -105,19 +152,6 @@ Focused on practical implementation and research-driven engineering.
 <footer>
 <p>© 2026 Tejash GC</p>
 </footer>
-
-<script>
-const text = "Electronics & Telecommunication Engineer";
-let i = 0;
-function typingEffect() {
-if (i < text.length) {
-document.getElementById("typing").innerHTML += text.charAt(i);
-i++;
-setTimeout(typingEffect, 70);
-}
-}
-typingEffect();
-</script>
 
 </body>
 </html>
