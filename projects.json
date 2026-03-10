@@ -1,0 +1,18 @@
+[
+{
+"title":"ADO OFDM System",
+"desc":"MATLAB simulation and performance analysis"
+},
+{
+"title":"LiFi Communication",
+"desc":"Optical wireless communication prototype"
+},
+{
+"title":"RF433 MHz Communication",
+"desc":"Multi transmitter wireless system"
+},
+{
+"title":"IoT Asthma Monitoring",
+"desc":"ESP32 respiratory monitoring system"
+}
+]
