@@ -8,17 +8,40 @@ move:{speed:2}
 }
 });
 
+const text="Electronics & Telecommunication Engineer";
+let i=0;
+
+function typing(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typing,50);
+
+}
+
+}
+
+typing();
+
+
 function revealOnScroll(){
 
-const elements=document.querySelectorAll(".reveal");
+const reveals=document.querySelectorAll(".reveal");
+
 const windowHeight=window.innerHeight;
 
-elements.forEach(el=>{
+reveals.forEach(el=>{
 
 const elementTop=el.getBoundingClientRect().top;
 
 if(elementTop<windowHeight-100){
+
 el.classList.add("active");
+
 }
 
 });
@@ -27,24 +50,3 @@ el.classList.add("active");
 
 window.addEventListener("scroll",revealOnScroll);
 window.addEventListener("load",revealOnScroll);
-
-
-/* typing animation */
-
-const text="Electronics & Telecommunication Engineer";
-let index=0;
-
-function typing(){
-
-if(index<text.length){
-document.getElementById("typing").innerHTML+=text.charAt(index);
-index++;
-setTimeout(typing,50);
-}
-
-}
-
-window.onload=function(){
-typing();
-revealOnScroll();
-};
