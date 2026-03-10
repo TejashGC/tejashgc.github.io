@@ -286,3 +286,86 @@ color:#fff;
 color:#cfd8dc;
 font-size:14px;
 }
+/* Publications glass cards */
+
+.pub-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:25px;
+}
+
+.pub-card{
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:14px;
+padding:22px;
+transition:0.35s;
+position:relative;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* glow border animation */
+
+.pub-card::before{
+content:"";
+position:absolute;
+top:-2px;
+left:-2px;
+right:-2px;
+bottom:-2px;
+background:linear-gradient(120deg,#00e0ff,transparent,#00e0ff);
+opacity:0;
+z-index:-1;
+transition:0.4s;
+}
+
+/* hover effect */
+
+.pub-card:hover{
+transform:translateY(-8px) scale(1.02);
+box-shadow:0 15px 40px rgba(0,224,255,0.25);
+}
+
+.pub-card:hover::before{
+opacity:0.6;
+filter:blur(8px);
+}
+
+.pub-card h3{
+color:#ffffff;
+margin-bottom:10px;
+font-size:18px;
+}
+
+.pub-card p{
+color:#cfd8dc;
+font-size:14px;
+line-height:1.6;
+}
+
+/* subtle floating animation */
+
+.pub-card{
+animation:floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard{
+
+0%{transform:translateY(0px);}
+50%{transform:translateY(-6px);}
+100%{transform:translateY(0px);}
+
+}
+
+/* mobile optimization */
+
+@media(max-width:768px){
+
+.pub-container{
+grid-template-columns:1fr;
+}
+
+}
