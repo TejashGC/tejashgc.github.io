@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tejash GC | Portfolio</title>
+<title>Tejash GC | Electronics Engineer</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -18,14 +17,18 @@
 
 <body>
 
-<div id="progress"></div>
+<div id="loader">
+<div class="spinner"></div>
+<p>Loading Portfolio</p>
+</div>
 
 <div id="particles-js"></div>
 
 <div class="cursor"></div>
 
-<nav class="navbar">
+<div id="progress"></div>
 
+<nav class="navbar">
 <h1 class="logo">Tejash GC</h1>
 
 <ul class="nav-links">
@@ -40,21 +43,21 @@
 </nav>
 
 
-<header class="hero section reveal" id="about">
+<header class="hero" id="about">
 
-<img src="profile.jpg" class="profile-img">
+<img src="assets/profile.jpg" class="profile-img">
 
 <h2 id="typing"></h2>
 
 <p>Embedded Systems | IoT | Communication Technologies</p>
 
-<div class="hero-links">
+<div class="hero-buttons">
 
-<a href="Tejash_Resume.pdf" target="_blank" class="btn">Resume</a>
+<a href="assets/resume.pdf" target="_blank" class="btn">Resume</a>
 
-<a href="https://www.linkedin.com/in/tejash-gc-9a3b17254" target="_blank" class="btn-outline">LinkedIn</a>
+<a href="https://www.linkedin.com/in/tejash-gc-9a3b17254" class="btn-outline">LinkedIn</a>
 
-<a href="https://www.codechef.com/users/sit1si23et421" target="_blank" class="btn-outline">CodeChef</a>
+<a href="https://www.codechef.com/users/sit1si23et421" class="btn-outline">CodeChef</a>
 
 </div>
 
@@ -65,26 +68,26 @@
 
 <h2>Technical Skills</h2>
 
-<div class="card-container">
+<div class="grid">
 
-<div class="glass-card">
+<div class="card">
 <h3>Programming</h3>
 <p>C++, Python, SQL</p>
 </div>
 
-<div class="glass-card">
+<div class="card">
 <h3>Embedded</h3>
 <p>Arduino, ESP8266, ESP32</p>
 </div>
 
-<div class="glass-card">
+<div class="card">
 <h3>Tools</h3>
 <p>MATLAB, Simulink, Packet Tracer</p>
 </div>
 
-<div class="glass-card">
+<div class="card">
 <h3>Core</h3>
-<p>Communication Systems</p>
+<p>Digital Electronics, Communication Systems</p>
 </div>
 
 </div>
@@ -96,29 +99,7 @@
 
 <h2>Projects</h2>
 
-<div class="card-container">
-
-<div class="glass-card">
-<h3>ADO OFDM</h3>
-<p>Performance analysis using MATLAB</p>
-</div>
-
-<div class="glass-card">
-<h3>LiFi System</h3>
-<p>Optical wireless communication</p>
-</div>
-
-<div class="glass-card">
-<h3>RF433 System</h3>
-<p>Wireless communication module</p>
-</div>
-
-<div class="glass-card">
-<h3>IoT Asthma Monitor</h3>
-<p>ESP32 respiratory monitoring</p>
-</div>
-
-</div>
+<div id="projectGrid" class="grid"></div>
 
 </section>
 
@@ -127,14 +108,13 @@
 
 <h2>Internship</h2>
 
-<div class="glass-card">
+<div class="card">
 
 <h3>Rittal Industrial Internship</h3>
 
-<p>
-Industrial automation systems<br>
-Jan 19 – May 23
-</p>
+<p>Industrial automation and panel technologies</p>
+
+<p>Jan 19 – May 23</p>
 
 </div>
 
@@ -145,16 +125,23 @@ Jan 19 – May 23
 
 <h2>Education</h2>
 
-<div class="card-container">
+<div class="grid">
 
-<div class="glass-card">
-<h3>B.E ETE</h3>
-<p>SIT Tumkur<br>CGPA 6.42</p>
+<div class="card">
+<h3>B.E Electronics & Telecommunication</h3>
+<p>Siddaganga Institute of Technology</p>
+<p>CGPA 6.42</p>
 </div>
 
-<div class="glass-card">
-<h3>Diploma</h3>
-<p>Siddaganga Polytechnic<br>CGPA 9.18</p>
+<div class="card">
+<h3>Diploma ECE</h3>
+<p>Siddaganga Polytechnic</p>
+<p>CGPA 9.18</p>
+</div>
+
+<div class="card">
+<h3>SSLC</h3>
+<p>Shubhodaya English School</p>
 </div>
 
 </div>
@@ -166,13 +153,10 @@ Jan 19 – May 23
 
 <h2>Contact</h2>
 
-<div class="glass-card">
+<div class="card">
 
 <p>Email: tejashtej07@gmail.com</p>
-
-<p>Phone: 9611370876</p>
-
-<p>Tumakuru Karnataka</p>
+<p>Phone: +91 9611370876</p>
 
 </div>
 
@@ -180,13 +164,25 @@ Jan 19 – May 23
 
 
 <footer>
-
 <p>© 2026 Tejash GC</p>
-
 </footer>
 
-<script src="script.js"></script>
+
+<div id="chatbot">
+
+<div id="chat-header">AI Assistant</div>
+
+<div id="chat-body"></div>
+
+<input id="chat-input" placeholder="Ask something...">
+
+</div>
+
+<script src="particles-config.js"></script>
+<script src="app.js"></script>
 <script src="cursor.js"></script>
+<script src="chatbot.js"></script>
+<script src="voice.js"></script>
 
 </body>
 </html>
