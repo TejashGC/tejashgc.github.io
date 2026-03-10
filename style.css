@@ -234,3 +234,29 @@ text-align:center;
 padding:30px;
 color:#888;
 }
+/* chatbot suggestion buttons */
+
+.suggest-container{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-top:10px;
+}
+
+.suggest-btn{
+background:rgba(0,224,255,0.15);
+color:#00e0ff;
+border:1px solid #00e0ff;
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.suggest-btn:hover{
+background:#00e0ff;
+color:#000;
+box-shadow:0 0 10px #00e0ff;
+transform:translateY(-2px);
+}
