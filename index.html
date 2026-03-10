@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Tejash GC | Electronics Engineer</title>
 
 <link rel="stylesheet" href="style.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
 </head>
 
 <body>
@@ -15,7 +20,9 @@
 <div id="particles-js"></div>
 
 <nav class="navbar">
+
 <h1 class="logo">Tejash GC</h1>
+
 <ul class="nav-links">
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
@@ -23,21 +30,31 @@
 <li><a href="#internship">Internship</a></li>
 <li><a href="#education">Education</a></li>
 </ul>
+
 </nav>
 
 <header class="hero" id="about">
+
 <img src="profile.jpg" class="profile-img">
+
 <h2>Electronics & Telecommunication Engineer</h2>
+
 <p>Embedded Systems | IoT | Communication Technologies</p>
 
 <div class="hero-links">
+
 <a href="Tejash_Resume.pdf" target="_blank" class="btn">Download Resume</a>
+
 <a href="https://www.linkedin.com/in/tejash-gc-9a3b17254" target="_blank" class="btn-outline">LinkedIn</a>
+
 <a href="https://www.codechef.com/users/sit1si23et421" target="_blank" class="btn-outline">CodeChef</a>
+
 </div>
+
 </header>
 
 <section class="section reveal" id="skills">
+
 <h2>Technical Skills</h2>
 
 <div class="card-container">
@@ -63,9 +80,11 @@
 </div>
 
 </div>
+
 </section>
 
 <section class="section reveal" id="projects">
+
 <h2>Projects</h2>
 
 <div class="card-container">
@@ -91,25 +110,34 @@
 </div>
 
 </div>
+
 </section>
 
 <section class="section reveal" id="internship">
+
 <h2>Internship</h2>
 
 <div class="glass-card">
+
 <h3>Rittal Industrial Internship</h3>
-<p>Worked on industrial automation systems and panel technologies. Exposure to system integration and industrial workflows.</p>
+
+<p>
+Worked on industrial automation systems and panel technologies.
+Exposure to system integration and industrial workflows.
+</p>
+
 </div>
 
 </section>
 
 <section class="section reveal" id="education">
+
 <h2>Education</h2>
 
 <div class="card-container">
 
 <div class="glass-card">
-<h3>B.E. Electronics & Telecommunication</h3>
+<h3>B.E. Electronics & Telecommunication Engineering</h3>
 <p>Siddaganga Institute of Technology<br>CGPA: 6.42</p>
 </div>
 
@@ -124,39 +152,14 @@
 </div>
 
 </div>
+
 </section>
 
 <footer>
 <p>© 2026 Tejash GC</p>
 </footer>
 
-<script>
-
-particlesJS("particles-js", {
-particles: {
-number: { value: 60 },
-size: { value: 3 },
-color: { value: "#00e0ff" },
-line_linked: { enable: true, color: "#00e0ff" },
-move: { speed: 2 }
-}
-});
-
-const reveals = document.querySelectorAll(".reveal");
-
-function revealOnScroll() {
-reveals.forEach(el => {
-const rect = el.getBoundingClientRect();
-if(rect.top < window.innerHeight - 100){
-el.classList.add("active");
-}
-});
-}
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
