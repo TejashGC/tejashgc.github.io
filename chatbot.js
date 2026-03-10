@@ -3,64 +3,140 @@ const bot = document.getElementById("chatbot")
 const input = document.getElementById("chat-input")
 const body = document.getElementById("chat-body")
 
+let greeted = false
+
+
 icon.onclick = () => {
+
 bot.style.display = bot.style.display === "block" ? "none" : "block"
+
+if(!greeted){
+addMessage("AI","Hello 👋 I am Tejash's portfolio assistant. Ask me about skills, projects or education.")
+showSuggestions()
+greeted = true
 }
+
+}
+
+
+
+function addMessage(sender,text){
+
+let div = document.createElement("div")
+
+div.innerHTML = "<b>"+sender+":</b> "
+
+body.appendChild(div)
+
+typeText(div,text)
+
+body.scrollTop = body.scrollHeight
+
+}
+
+
+
+function typeText(element,text){
+
+let i = 0
+
+function typing(){
+
+if(i < text.length){
+
+element.innerHTML += text.charAt(i)
+
+i++
+
+setTimeout(typing,20)
+
+}
+
+}
+
+typing()
+
+}
+
+
 
 function reply(question){
 
 let q = question.toLowerCase()
 
 if(q.includes("hi") || q.includes("hello"))
-return "Hello 👋 I am Tejash's portfolio assistant."
+return "Hello 👋"
 
 if(q.includes("who") && q.includes("tejash"))
-return "Tejash GC is an Electronics & Telecommunication Engineering student focusing on Embedded Systems, IoT and Communication Technologies."
+return "Tejash GC is an Electronics & Telecommunication Engineering student specializing in Embedded Systems and IoT."
 
 if(q.includes("skills"))
-return "Tejash works with C++, Python, SQL, Arduino, ESP8266, ESP32, MATLAB, Simulink and communication systems."
+return "Skills include C++, Python, SQL, Arduino, ESP8266, ESP32, MATLAB, Simulink and communication systems."
 
 if(q.includes("projects"))
-return "Tejash built LiFi Communication System, RF433 MHz Communication System, IoT Asthma Monitoring System and ADO-OFDM System using MATLAB."
-
-if(q.includes("lifi"))
-return "LiFi project uses LED light for wireless data transmission using optical communication."
-
-if(q.includes("rf433"))
-return "RF433 system uses HT12E encoder and HT12D decoder modules for wireless communication."
-
-if(q.includes("iot"))
-return "IoT Asthma Monitoring system collects respiratory sensor data using ESP32."
+return "Main projects are LiFi Communication System, RF433 MHz Communication System, IoT Asthma Monitoring System and ADO-OFDM system."
 
 if(q.includes("education"))
-return "Tejash completed Diploma in Electronics from Siddaganga Polytechnic (CGPA 9.18) and is pursuing BE at Siddaganga Institute of Technology."
+return "Tejash studied Diploma at Siddaganga Polytechnic with CGPA 9.18 and currently pursuing BE at Siddaganga Institute of Technology."
 
 if(q.includes("internship"))
-return "Tejash completed industrial internship at Rittal working with automation panels and industrial systems."
+return "Tejash completed industrial internship at Rittal working with automation panels and industrial control systems."
 
 if(q.includes("publication"))
-return "Tejash co-authored a paper titled Intelligent Dynamic Instruction Scheduling presented at ICTCS 2025 and accepted for Springer proceedings."
-
-if(q.includes("certificate"))
-return "Tejash completed MATLAB & Simulink Onramp and Cisco Networking Fundamentals certification."
+return "Tejash co-authored Intelligent Dynamic Instruction Scheduling presented at ICTCS 2025 and accepted for Springer proceedings."
 
 if(q.includes("contact"))
-return "You can contact Tejash via email: tejashtej07@gmail.com or phone: +91 9611370876."
+return "Email: tejashtej07@gmail.com  Phone: +91 9611370876"
 
-if(q.includes("resume"))
-return "You can download Tejash resume using the Resume button on this website."
-
-if(q.includes("linkedin"))
-return "LinkedIn profile is available through the LinkedIn button in the hero section."
-
-if(q.includes("codechef"))
-return "CodeChef profile shows Tejash programming activity and coding practice."
-
-if(q.includes("thanks") || q.includes("thank"))
-return "You're welcome 😊"
-
-return "I am Tejash portfolio assistant. Ask about skills, projects, education, internship, publications or contact."
+return "Ask about skills, projects, education, internship or publications."
 }
+
+
+
+function showSuggestions(){
+
+let suggestions = [
+
+"Who is Tejash",
+"Skills",
+"Projects",
+"Education",
+"Internship",
+"Contact"
+
+]
+
+let box = document.createElement("div")
+
+box.style.marginTop = "10px"
+
+suggestions.forEach(q => {
+
+let btn = document.createElement("button")
+
+btn.innerText = q
+
+btn.className = "suggest-btn"
+
+btn.onclick = () => {
+
+addMessage("You",q)
+
+let ans = reply(q)
+
+addMessage("AI",ans)
+
+}
+
+box.appendChild(btn)
+
+})
+
+body.appendChild(box)
+
+}
+
+
 
 input.addEventListener("keypress", e => {
 
@@ -68,13 +144,11 @@ if(e.key === "Enter"){
 
 let q = input.value
 
-body.innerHTML += "<div><b>You:</b> " + q + "</div>"
+addMessage("You",q)
 
 let ans = reply(q)
 
-body.innerHTML += "<div><b>AI:</b> " + ans + "</div>"
-
-body.scrollTop = body.scrollHeight
+addMessage("AI",ans)
 
 input.value = ""
 
