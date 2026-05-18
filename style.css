@@ -227,7 +227,15 @@ z-index:1500;
 box-shadow:0 0 10px #00e0ff,0 0 20px #00e0ff;
 }
 
-
+#robot{
+position:fixed;
+bottom:20px;
+right:20px;
+width:90px;
+z-index:9999;
+transition:transform 0.1s linear;
+pointer-events:none;
+}
 /* chatbot */
 
 #chat-icon{
