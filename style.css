@@ -227,17 +227,6 @@ z-index:1500;
 box-shadow:0 0 10px #00e0ff,0 0 20px #00e0ff;
 }
 
-/* cursor */
-
-.cursor{
-width:20px;
-height:20px;
-border:2px solid #00e0ff;
-border-radius:50%;
-position:fixed;
-pointer-events:none;
-z-index:2000;
-}
 
 /* chatbot */
 
