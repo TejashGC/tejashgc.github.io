@@ -23,7 +23,20 @@ el.classList.add("active")
 }
 })
 }
+const robot=document.getElementById("robot")
 
+document.addEventListener("mousemove",(e)=>{
+
+const robotX=window.innerWidth-70
+const robotY=window.innerHeight-70
+
+const dx=e.clientX-robotX
+const dy=e.clientY-robotY
+
+const angle=Math.atan2(dy,dx)*180/Math.PI
+
+robot.style.transform=`rotate(${angle}deg)`
+})
 window.addEventListener("scroll",reveal)
 
 fetch("projects.json")
